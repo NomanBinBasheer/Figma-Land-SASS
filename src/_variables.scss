@@ -1,0 +1,64 @@
+// -----Variables-----
+
+//  Theme Colors
+
+$primary: #2091F9;
+$secondary: #18171A;
+$error: #d32752;
+$info: #f6c31c;
+
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "error": $error,
+    "info": $info,
+    "dark-grey": #374754,
+    "dark-blue": #252B42,
+    "red": #e61919,
+    "blue": #1919e6,
+    "white": white,
+    "white-dark": rgba(255, 255, 255, 0.9),
+    "white-darker": rgba(255, 255, 255, 0.7),
+    "black": black
+);
+
+//  Spacing
+
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// Borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+
+
+// Box Shadow
+
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
+// Font sizes
+
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * .75;
+$font-size-sm-md: $base-font-size * .85;
+$font-size-md-lg: $base-font-size * 1.22;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-lg-xl: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+$font-size-xxxl: $base-font-size * 4;
+$font-size-xxxl-md: $base-font-size * 5;
+$font-size-xxxxl: $base-font-size * 6;
+
+$base-line-height: 1rem;
+$line-height-sm: $base-line-height * .75;
+$line-height-lg: $base-line-height * 1.5;
+$line-height-xl: $base-line-height * 2;
+$line-height-xxl: $base-line-height * 3;
+$line-height-xxxl: $base-line-height * 4;
+$line-height-xxxxl: $base-line-height * 5;
+$line-height-xxxxxl: $base-line-height * 6;
+
+// @debug $colors
+

@@ -1,0 +1,119 @@
+@use 'sass:math';
+
+$grid-columns: 12;
+
+$grid-gaps: (
+    '0': 0,
+    '1': 10px,
+    '2': 20px,
+    '3': 30px,
+);
+
+$layout-values: flex-start, flex-end, center, space-between, space-around, space-evenly;
+$align-values: flex-start, flex-end, center, space-between, space-around, space-evenly;
+$flex-direction-values: column, row;
+
+// Base layout classes
+
+.container{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    // padding: $base-padding $base-padding * 2;
+    box-sizing: border-box;
+    // background: pink;
+}
+.row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// gap classes
+
+@each $key, $val in $grid-gaps{
+    .gap-#{$key} > *{
+      padding: $val;
+    }
+    .gap-#{$key}{
+        margin-left: -$val;
+        margin-right: -$val;
+      }
+}
+
+// justify content classes
+
+@each $val in $layout-values{
+    .justify-#{$val}{
+      justify-content: $val;
+    }
+    
+}
+
+// align items classes
+
+@each $val in $align-values{
+  .align-#{$val}{
+    align-items: $val;
+  }
+  
+}
+
+
+// flex-direction classes
+
+@each $val in $flex-direction-values{
+  .flex-#{$val}{
+    flex-direction: $val;
+  }
+  
+}
+
+// col classes
+
+ 
+  @mixin classes-content{
+      box-sizing: border-box;
+      flex-grow: 0;
+  };
+
+@include xs {
+    @for $i from 1 through $grid-columns{
+       .col-#{$i}-xs{
+         @include classes-content;
+         width: math.div($i * 100%, $grid-columns);
+       }
+    }
+  }
+
+  @include sm {
+    @for $i from 1 through $grid-columns{
+       .col-#{$i}-sm{
+         @include classes-content;
+         width: math.div($i * 100%, $grid-columns);
+       }
+    }
+  }
+  @include md {
+    @for $i from 1 through $grid-columns{
+       .col-#{$i}-md{
+         @include classes-content;
+         width: math.div($i * 100%, $grid-columns);
+       }
+    }
+  }
+  @include lg {
+    @for $i from 1 through $grid-columns{
+       .col-#{$i}-lg{
+         @include classes-content;
+         width: math.div($i * 100%, $grid-columns);
+       }
+    }
+  }
+  @include xl {
+    @for $i from 1 through $grid-columns{
+       .col-#{$i}-xl{
+         @include classes-content;
+         width: math.div($i * 100%, $grid-columns);
+       }
+    }
+  }

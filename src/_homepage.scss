@@ -1,0 +1,175 @@
+.main-container{
+    width: 100%;
+    height: 900px;
+    background-image: url('../img/main-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+    .main-content{
+        width: 700px;
+        height: 400px;
+        margin: 70px auto;
+    }
+}
+
+.features{
+
+    .features-container{
+        width: 450px;
+        margin: 120px auto 0 auto;
+    }
+
+    .features-list{
+
+        .feature{
+            min-height: max-content;
+            width: 350px;
+            min-height: max-content;
+        }
+    }
+
+    .video-container{
+        width: 95%;
+        margin: 50px auto;
+       position: relative;
+
+       .video-img{
+        display: block;
+         position: relative;
+         margin: 0 auto;
+       }
+       .play-button{
+         width: 100px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+    }
+}
+
+.fastest{
+    width: 88%;
+    margin: 50px auto;
+     
+    .fastest-content{
+        width: 400px;
+    }
+
+    .laptop-img-container{
+        width: 600px;
+    }
+}
+
+.lightning{
+    width: 86%;
+    margin: 50px auto;
+
+    .ilustration-container{
+        width: 500px;
+    }
+
+    .lightning-content{
+        h4{
+            width: 300px;
+        }
+
+        .subscribe{
+
+            input{
+                width: 273px;
+                background: #F4F4F4;
+                border: 1px solid #d4d4d4;
+                padding: $base-padding * 1.2 $base-padding * 3.2;
+                border-radius: $base-border-radius;
+            }
+            button{
+                padding: $base-padding * 1.1 $base-padding * 3.2;
+                border-radius: $base-border-radius * 1.2;
+            }
+        }
+    }
+}
+
+.partners{
+
+    p{
+        width: 500px;
+    }
+}
+
+// .testimonials{
+
+//     // p{
+//     //     width: 700px;
+//     // }
+// }
+
+.pricing{
+
+    .calendars-para{
+        width: 500px;
+    }
+
+
+    .pricing-cards-container{
+
+        width: 90%;
+
+        .pricing-card{
+            width: 335px;
+            // min-height: max-content;
+            height: 607px;
+            box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+
+
+            button{
+                width: 100%;
+            }
+        }
+
+        .standard-card{
+            height: 693px;
+        }
+
+    }
+}
+
+.contact-us{
+
+    .contact-card{
+        width: 360px;
+        height: 548px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
+        border-radius: $base-border-radius;
+
+        input, textarea{
+            width: 300px;
+            background: #F4F4F4;
+            border: 1px solid #d4d4d4;
+            padding: $base-padding * 1.2 $base-padding * 3.2;
+            border-radius: $base-border-radius;
+        }
+        
+    }
+
+    .locations{
+        width: 50%;
+
+        .contacts{
+
+            li{
+                height: 100px;
+            }
+            .address{
+                width: 200px;
+            }
+
+        }
+
+        
+    }
+}

@@ -1,0 +1,44 @@
+%flex-layout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+    // background: pink;
+}
+
+.navbar{
+    @extend %flex-layout;
+    padding: $base-padding $base-padding * 10;
+    // box-shadow: $base-box-shadow;
+
+    .container{
+        @extend %flex-layout;
+    }
+
+    .site-title{
+        // font-size: $font-size-xl;
+        cursor: pointer;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li{
+            padding: 0 $base-padding * 1.5;
+            cursor: pointer;
+        }
+    }
+
+    .logo img{
+        width: 200px;
+    }
+}
+
+@each $key, $val in $colors{
+    .navbar-#{$key}{
+        background-color: $val;
+    }
+}
