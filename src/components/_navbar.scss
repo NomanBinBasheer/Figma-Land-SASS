@@ -95,7 +95,7 @@
   
 }
 .mobile-menu{
-    width: 300px;
+    width: 85%;
     height: 0;
     position: absolute;
     display: flex;
@@ -113,6 +113,11 @@
     -webkit-backdrop-filter: blur( 10px );
     border-radius: 10px;
     // border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+    @include sm {
+        width: 300px;
+    }
 
     .nav-links{
         display: flex;
