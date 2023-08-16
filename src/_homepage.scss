@@ -388,11 +388,13 @@
     align-items: center;
     gap: 50px;
     text-align: center;
+    
 
 
     @include lg{
       flex-direction: row;
       gap: 0;
+      text-align: left;
     }
 
     h4{
