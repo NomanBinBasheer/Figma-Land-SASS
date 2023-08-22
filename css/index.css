@@ -470,7 +470,7 @@ img {
 }
 .main-container .main-content h1 {
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 30px;
 }
 @media (min-width: 480px) {
@@ -478,7 +478,7 @@ img {
     font-size: 4rem;
   }
 }
-@media (min-width: 720px) {
+@media (min-width: 790px) {
   .main-container .main-content h1 {
     font-size: 5rem;
     font-weight: 700;
@@ -530,7 +530,7 @@ img {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 980px) {
+@media (min-width: 1020px) {
   .fastest {
     flex-direction: row;
     text-align: center;
@@ -542,7 +542,7 @@ img {
   width: 85%;
   text-align: center;
 }
-@media (min-width: 980px) {
+@media (min-width: 1020px) {
   .fastest .fastest-content {
     width: 50%;
     text-align: left;
@@ -566,7 +566,7 @@ img {
   text-align: center;
   gap: 40px;
 }
-@media (min-width: 980px) {
+@media (min-width: 1020px) {
   .lightning {
     flex-direction: row;
     justify-content: space-between;
@@ -587,22 +587,23 @@ img {
     width: 45%;
   }
 }
+.lightning .lightning-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .lightning .lightning-content h4 {
   width: 300px;
   font-size: 38px;
+  text-align: center;
 }
 @media (min-width: 480px) {
   .lightning .lightning-content h4 {
     font-size: 3rem;
   }
 }
-.lightning .lightning-content p {
-  margin-top: 15px;
-}
-@media (min-width: 980px) {
-  .lightning .lightning-content p {
-    margin-top: 0;
-  }
+.lightning .lightning-content h6 {
+  margin-bottom: 8px;
 }
 .lightning .lightning-content .subscribe {
   flex-direction: column;
