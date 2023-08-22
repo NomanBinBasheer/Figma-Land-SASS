@@ -15,18 +15,23 @@
 
 .main-container {
   width: 100%;
-  // height: 700px;
+  height: 115vh;
   min-height: max-content;
   padding-bottom: 150px;
   background-image: url("../img/main-bg-min.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
 
   .main-content {
     width: 85%;
     min-height: max-content;
-    margin: 70px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
 
     @include lg {
       width: 55%;
@@ -34,15 +39,19 @@
 
     h1 {
       font-weight: 400;
-      font-size: $font-size-xxxl;
+      font-size: $font-size-xxl;
       margin-bottom: 30px;
+
+      @include sm {
+        font-size: $font-size-xxxl;
+      }
       // @include xs{
       //     font-size: $font-size-lg-xl;
       //   }
       //   @include sm{
       //     font-size: $font-size-xl;
       //   }
-      @include xl {
+      @include md {
         font-size: $font-size-xxxl-md;
         font-weight: 700;
       }
@@ -129,26 +138,30 @@
 
 .lightning {
   width: 88%;
-  margin: 0 auto;
+  margin: 100px auto 60px auto;
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
   gap: 40px;
 
-  @include lg{
-    flex-direction: row;justify-content: space-between;
+  @include lg {
+    flex-direction: row;
+    justify-content: space-between;
     text-align: left;
+    margin-bottom: 100px;
     // background: green;
   }
 
   .ilustration-container {
     width: 85%;
 
-    @include lg{
-        width: 45%;
+    @include sm {
+      width: 70%;
     }
 
-
+    @include lg {
+      width: 45%;
+    }
   }
 
   .lightning-content {
@@ -156,16 +169,15 @@
       width: 300px;
       font-size: 38px;
 
-
-      @include sm{
+      @include sm {
         font-size: $font-size-xxl;
       }
     }
 
-    p{
+    p {
       margin-top: 15px;
 
-      @include lg{
+      @include lg {
         margin-top: 0;
       }
     }
@@ -174,9 +186,9 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      margin-top: 20px;
+      margin-top: 35px;
 
-      @include lg{
+      @include lg {
         flex-direction: row;
       }
 
@@ -185,30 +197,52 @@
         background: #f4f4f4;
         border: 1px solid #d4d4d4;
         padding: $base-padding * 1.2 $base-padding * 3.2;
-        border-radius: $base-border-radius;
+        border-radius: $base-border-radius * 4;
       }
       button {
         width: 273px;
-        border-radius: $base-border-radius * 1.2;
+        border-radius: $base-border-radius * 3;
         text-align: center;
         padding: $base-padding * 1.1 0;
 
-        @include lg{
+        @include lg {
           width: 140px;
         }
       }
     }
   }
-
-  
 }
 
 .partners {
-
-
-  .partners-logos-container{
+  .partners-logos-container {
     width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: green;
+
+    > div {
+      background: #fff;
+      width: 100%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: 2px solid #d8d8d8;
+
+      @include md {
+        width: 50%;
+      }
+      @include lg {
+        width: 50%;
+      }
+      @include xl {
+        width: 25%;
+      }
+    }
   }
+
   p {
     width: 85%;
 
@@ -218,24 +252,34 @@
   }
 }
 
-.testimonials{
+.testimonials {
+  p {
+    width: 85%;
+    font-size: $font-size-md-lg;
 
-    p{
-        width: 85%;
-        font-size: $font-size-md-lg;
-
-        @include lg{
-          width: 60%;
-          font-size: $font-size-lg;
-        }
+    @include lg {
+      width: 60%;
+      font-size: $font-size-lg;
     }
+  }
+
+  .customer-details {
+    gap: 10px;
+    img {
+      width: 70px;
+    }
+
+    p:nth-child(2) {
+      font-size: 15px;
+    }
+  }
 }
 
 .pricing {
   .calendars-para {
     width: 85%;
 
-    @include lg{
+    @include lg {
       width: 60%;
     }
   }
@@ -244,8 +288,9 @@
     width: 90%;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 
-    @include xl{
+    @include lg {
       flex-direction: row;
     }
 
@@ -255,18 +300,19 @@
       // height: 580px;
       box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
       border-radius: 10px;
-      margin-bottom: 20px;
       padding: 24px;
 
-      
-
-      @include sm{
-        width: 335px;
+      @include sm {
+        width: 80%;
         padding: 24px 72px;
       }
-
-      @include xl{
-        margin-bottom: 0;
+      @include md {
+        width: 60%;
+        padding: 24px 72px;
+      }
+      @include lg {
+        width: 335px;
+        padding: 24px 72px;
       }
 
       button {
@@ -274,44 +320,54 @@
         font-size: 13px;
         padding: 10px 0;
 
-
-        @include sm{
+        @include sm {
           font-size: 16px;
         }
       }
 
-      .price{
+      .price {
+        min-width: max-content;
+        justify-content: center;
 
-        >span:first-child{
+        > span:first-child {
           font-size: $font-size-xxxl;
 
-
-          @include md{
+          @include md {
             font-size: $font-size-xxxxl;
           }
         }
-
       }
     }
 
     .standard-card {
       min-height: max-content;
-      margin-bottom: 20px;
+      color: white;
 
-
-      @include lg{
+      @include xxl {
         height: 663px;
         margin-bottom: 0;
+      }
+
+      .btn-white:hover {
+        background: rgb(247, 247, 247);
       }
     }
   }
 }
 
-.testimonials{
-  
-  .customer-details{
+.pricing-card-free-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    p{
+  > span {
+    margin-bottom: 8px;
+  }
+}
+
+.testimonials {
+  .customer-details {
+    p {
       width: 100%;
     }
   }
@@ -320,39 +376,40 @@
 .contact-us {
   padding: 10px;
 
-  @include lg{
-    
-  padding: 40px;
-
+  @include lg {
+    padding: 40px;
   }
 
-  > p{
+  > p {
     font-size: $base-font-size;
     margin-top: 20px;
 
-
-    @include lg{
+    @include lg {
       font-size: $font-size-lg-xl;
     }
   }
 
-  .contact-and-map{
-    flex-direction: column;
-    align-items: center;
+  .contact-and-map {
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 50px auto;
 
-
-    @include lg{
+    @include lg {
       flex-direction: row;
+      align-items: flex-start;
+      gap: 100px;
+      margin-top: 80px;
     }
   }
 
   .contact-card {
     width: 90%;
-    height: 548px;
+    height: 578px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
     border-radius: $base-border-radius;
 
-    @include sm{
+    @include sm {
       width: 360px;
     }
 
@@ -362,7 +419,13 @@
       background: #f4f4f4;
       border: 1px solid #d4d4d4;
       padding: $base-padding * 1.2 $base-padding * 3.2;
-      border-radius: $base-border-radius;
+    }
+    input {
+      border-radius: $base-border-radius * 5;
+    }
+    textarea {
+      resize: none;
+      border-radius: 3px;
     }
   }
 
@@ -370,18 +433,18 @@
     width: 90%;
     margin-top: 40px;
 
-
-    @include lg{
+    @include lg {
       width: 50%;
+      margin-top: 0;
     }
 
     .contacts {
       flex-direction: column;
-      align-items: center;   
+      align-items: center;
+      justify-content: center;
       gap: 30px;
 
-
-      @include lg{
+      @include lg {
         flex-direction: row;
       }
       li {
@@ -390,88 +453,109 @@
       .address {
         width: 200px;
       }
-
     }
-    .locations-img-container{
+    .locations-img-container {
+      width: 80%;   
+      margin: 40px auto 0 auto;
 
-      img{
+      @include lg{
+        width: 70%;
+      }
+      img {
         width: 100%;
         object-fit: cover;
       }
-   }
+    }
+
+    .locations-social-links {
+      margin-top: 30px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      span {
+        cursor: pointer;
+        color: $primary;
+      }
+
+      @include lg {
+        margin-left: 15px;
+        margin-top: 50px;
+      }
+    }
   }
 }
 
-
-.footer{
+.footer {
   // height: 267px;
   min-height: max-content;
-  background: #252B42;
+  background: #252b42;
   color: white;
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
-
-  .footer-inner{
-    width: 60%;
+  .footer-inner {
+    width: 70%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    text-align: center;
-    
 
-
-    @include lg{
+    @include lg {
       flex-direction: row;
       gap: 0;
       text-align: left;
+      align-items: flex-start;
     }
 
-    h4{
+    h4 {
       margin-bottom: 20px;
       font-size: $font-size-md-lg;
     }
 
-    ul{
+    ul {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size: 14px;
+      gap: 16px;
+      font-size: 15px;
 
-      li{
+      li {
         cursor: pointer;
       }
     }
 
-    .footer-contacts{
+    .footer-contacts {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 30px;
 
-      >div{
+      > div {
         display: flex;
         align-items: center;
         gap: 10px;
       }
-      
-      .fa-brands, .fa-solid{
-        font-size: 20px
+
+      .fa-brands,
+      .fa-solid {
+        font-size: 20px;
+        cursor: pointer;
       }
 
-      div:last-child{
+      div:last-child {
         margin-top: 12px;
         font-size: 36px;
         gap: 30px;
 
-        .fa-brands, .fa-solid{
-          font-size: 26px
+        .fa-brands,
+        .fa-solid {
+          font-size: 26px;
         }
       }
     }
   }
-
 }
